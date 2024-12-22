@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="course_data_1" model="faridacademy.course">
+        <field name="name">Course 1</field>
+        <field name="description">Course 1 Description</field>
+    </record>
+    <record id="course_data_2" model="faridacademy.course">
+        <field name="name">Course 2</field>
+        <field name="description">Course 2 Description</field>
+    </record>
+</odoo>

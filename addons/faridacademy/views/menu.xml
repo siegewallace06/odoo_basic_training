@@ -1,0 +1,9 @@
+<odoo>
+
+    <!-- Menu Root -->
+    <menuitem
+        id="faridacademy_menu_root"
+        name="Farid Academy"
+        sequence="1"
+    />
+</odoo>

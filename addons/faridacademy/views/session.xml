@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- faridacademy.session list view -->
+    <record id="faridacademy.session_view_list" model="ir.ui.view">
+        <field name="name">faridacademy.session.view.list</field>
+        <field name="model">faridacademy.session</field>
+        <field name="arch" type="xml">
+            <list decoration-info="duration &lt; 5" decoration-danger="duration &gt; 15">
+                <!-- Add your fields here -->
+                <field name="name" />
+                <field name="start_date" />
+                <field name="course_id" />
+                <field name="partner_id" />
+                <field name="number_of_seats" />
+                <field name="duration" />
+                <field name="taken_seats" widget="progressbar" />
+                <field name="state" />
+            </list>
+        </field>
+    </record>
+
+    <!-- faridacademy.session form view -->
+    <record id="faridacademy.session_view_form" model="ir.ui.view">
+        <field name="name">faridacademy.session.view.form</field>
+        <field name="model">faridacademy.session</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <header>
+                    <button string="Confirm" type="object" name="action_confirm"
+                        invisible="state != 'draft'" class="oe_highlight" />
+                    <button string="Mark as done" type="object" name="action_done"
+                        invisible="state != 'running'" class="oe_highlight" />
+                    <button string="Reset to draft" type="object" name="action_draft"
+                        invisible="state not in ['running', 'closed']" />
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Session Name" />
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="start_date" />
+                            <field name="number_of_seats" />
+                        </group>
+                        <group>
+                            <field name="duration" />
+                            <field name="taken_seats" widget="progressbar" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="description" string="Description">
+                            <field name="description" />
+                        </page>
+                        <page name="partner_ids" string="Attendees">
+                            <field name="partner_ids">
+                                <list editable="bottom">
+                                    <field name="name" />
+                                    <field name="phone" />
+                                    <field name="email" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- faridacademy.session action window -->
+    <record id="faridacademy.session_action" model="ir.actions.act_window">
+        <field name="name">Session</field>
+        <field name="res_model">faridacademy.session</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem
+        id="session_menu_act"
+        name="Session"
+        parent="faridacademy.faridacademy_menu_root"
+        action="faridacademy.session_action"
+        sequence="20" />
+
+</odoo>

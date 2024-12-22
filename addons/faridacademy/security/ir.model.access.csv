@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_faridacademy_course,faridacademy.course,model_faridacademy_course,base.group_user,1,1,1,1
+access_faridacademy_session,faridacademy.session,model_faridacademy_session,base.group_user,1,1,1,1
+access_faridacademy_partner_categories,faridacademy.partner_categories,model_faridacademy_partner_categories,base.group_user,1,1,1,1
