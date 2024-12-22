@@ -1,3 +1,10 @@
 env/
 postgresql/
 env/
+
+# Basic Python Ignore
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.env

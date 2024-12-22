@@ -1,0 +1,6 @@
+Odoo Master Password:
+odoo_master_password
+
+Odoo DB:
+farid_academy
+odoo_password

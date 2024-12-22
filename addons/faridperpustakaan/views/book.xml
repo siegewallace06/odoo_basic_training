@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- faridperpustakaan.book list view -->
+    <record id="book_view_list" model="ir.ui.view">
+        <field name="name">faridperpustakaan.book.view.list</field>
+        <field name="model">faridperpustakaan.book</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="total" />
+                <field name="available_book" />
+            </list>
+        </field>
+    </record>
+
+    <!-- faridperpustakaan.book form view -->
+    <record id="book_view_form" model="ir.ui.view">
+        <field name="name">faridperpustakaan.book.view.form</field>
+        <field name="model">faridperpustakaan.book</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="total" />
+                            <field name="available_book" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Transaction" name="transaction_ids">
+                            <field name="transaction_ids" />
+                        </page>
+                        <page string="Description" name="description">
+                            <field name="description" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- model.name action window -->
+    <record id="book_action" model="ir.actions.act_window">
+        <field name="name">Buku</field>
+        <field name="res_model">faridperpustakaan.book</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="perpustakaan_menu_root" name="Perpustakaan" sequence="2"
+        web_icon="faridperpustakaan,static/description/icon.png" />
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="configuration_menu_categ" name="Configuration" parent="perpustakaan_menu_root"
+        sequence="30" />
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="book_menu_act" name="Buku" parent="perpustakaan_menu_root" action="book_action"
+        sequence="20" />
+
+</odoo>

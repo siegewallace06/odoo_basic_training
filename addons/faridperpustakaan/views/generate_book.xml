@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="generate_book_view_form" model="ir.ui.view">
+        <field name="name">generate.book.view.form</field>
+        <field name="model">generate.book</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <group>
+                    <p>Process generate book?</p>
+                </group>
+                <footer>
+                    <button name="act_generate_book" type="object" string="Generate"
+                        class="btn-primary" />
+                    <button special="cancel" string="Cancel" class="btn-primary" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="generate_book_action" model="ir.actions.act_window">
+        <field name="name">Generate Book</field>
+        <field name="res_model">generate.book</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_faridperpustakaan_book" />
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="generate_book_menu_act" name="Generate Book"
+        parent="faridperpustakaan.configuration_menu_categ" action="generate_book_action" />
+</odoo>

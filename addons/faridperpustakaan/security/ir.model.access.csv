@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_faridperpustakaan_book,faridperpustakaan.book,model_faridperpustakaan_book,,1,1,1,1
+access_faridperpustakaan_transaction,faridperpustakaan.transaction,model_faridperpustakaan_transaction,,1,1,1,1
+access_generate_book,faridperpustakaan.generate_book,model_generate_book,,1,1,1,1
