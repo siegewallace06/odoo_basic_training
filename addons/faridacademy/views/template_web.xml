@@ -10,4 +10,20 @@
         </t>
     </template>
 
+    <template id="course" name="Course">
+        <t t-call="website.layout">
+            <t t-set="title">Course</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <t t-set="no" t-value="1" />
+                    <t t-foreach="courses" t-as="course">
+                        <p><t t-esc="no" />. <t t-esc="course.name" /> - <t
+                                t-esc="course.user_id.name" /></p>
+                        <t t-set="no" t-value="no + 1" />
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
 </odoo>

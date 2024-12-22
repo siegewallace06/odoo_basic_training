@@ -13,3 +13,10 @@ class RouteAcademy(http.Controller):
         return http.request.render('faridacademy.teacher', {
             'teachers': ["Diana Padilla", "Jody Caroll", "Lester Vaughn"],
         })
+
+    @http.route('/course', auth='public', website=True)
+    def course(self, **kw):
+        Courses = http.request.env['faridacademy.course'].sudo().search([])
+        return http.request.render('faridacademy.course', {
+            'courses': Courses,
+        })
