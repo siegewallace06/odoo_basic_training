@@ -17,10 +17,40 @@
                 <div class="container">
                     <t t-set="no" t-value="1" />
                     <t t-foreach="courses" t-as="course">
-                        <p><t t-esc="no" />. <t t-esc="course.name" /> - <t
+                        <p><t t-esc="no" />. <a t-attf-href="/course/{{ slug(course) }}">
+                                <t t-esc="course.name" />
+                            </a>- <t
                                 t-esc="course.user_id.name" /></p>
                         <t t-set="no" t-value="no + 1" />
                     </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="course_detail" name="Course">
+        <t t-call="website.layout">
+            <t t-set="title">Course <t t-esc="course.name" /></t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <center>
+                                <h1>
+                                    <span t-esc="course.name" />
+                                </h1>
+                                <br />
+                                <span t-field="course.user_id.name" />
+                            </center>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <center>
+                                <span t-esc="course.description" />
+                            </center>
+                        </div>
+                    </div>
                 </div>
             </div>
         </t>
