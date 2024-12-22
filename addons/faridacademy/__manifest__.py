@@ -31,6 +31,8 @@ Long description of module's purpose
         'views/partner_categories.xml',
         'views/views.xml',
         'views/templates.xml',
+        # 'reports/inherit_report_sale.xml',
+        'views/template_web.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

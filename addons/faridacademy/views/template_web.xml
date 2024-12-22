@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="teacher" name="List Teacher">
+        <title>Teacher</title>
+        <t t-foreach="teachers" t-as="teacher">
+            <p>
+                <t t-esc="teacher" />
+            </p>
+        </t>
+    </template>
+
+</odoo>
